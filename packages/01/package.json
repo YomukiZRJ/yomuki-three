@@ -1,0 +1,16 @@
+{
+  "name": "01",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./index.html --open"
+  },
+  "dependencies": {
+    "parcel": "^2.8.0",
+    "three": "^0.146.0"
+  }
+}
