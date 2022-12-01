@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>光源</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="controls">
+      <div>
+        点光源 PointLight
+        <label for="PointLight">是否显示</label>
+        <input type="checkbox" id="PointLight" name="PointLight" />
+      </div>
+      <div>
+        环境光 AmbientLight
+        <label for="AmbientLight">是否显示</label>
+        <input type="checkbox" id="AmbientLight" name="AmbientLight" />
+      </div>
+      <div>
+        平行光 DirectionalLight
+        <label for="DirectionalLight">是否显示</label>
+        <input type="checkbox" id="DirectionalLight" name="DirectionalLight" />
+      </div>
+      <div>
+        聚光灯 SpotLight
+        <label for="SpotLight">是否显示</label>
+        <input type="checkbox" id="SpotLight" name="SpotLight" />
+      </div>
+      <div>
+        半球光 HemisphereLight
+        <label for="HemisphereLight">是否显示</label>
+        <input type="checkbox" id="HemisphereLight" name="HemisphereLight" />
+      </div>
+    </div>
+    <script type="module" src="./index.ts"></script>
+  </body>
+</html>
