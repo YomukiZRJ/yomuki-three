@@ -4,10 +4,11 @@ import useTransformsObjects from "./three/transforms-objects";
 import useAnimations from "./three/animations";
 import useAnimationsGsap from "./three/animations-gsap";
 import useCamera from "./three/camera";
+import useOrbitControls from "./three/orbit-controls";
 const canvasRef = ref<HTMLCanvasElement | null>(null);
 onMounted(() => {
   if (canvasRef.value) {
-    useCamera(canvasRef.value, window.innerWidth, window.innerHeight);
+    useOrbitControls(canvasRef.value, window.innerWidth, window.innerHeight);
   }
 });
 </script>
