@@ -1,13 +1,9 @@
 <script setup lang="ts">
 const canvasRef = ref<HTMLCanvasElement | null>(null);
-
+const { width, height } = useWindowSize();
 onMounted(() => {
   if (canvasRef.value) {
-    useFullscreenAndResizing(
-      canvasRef.value,
-      window.innerWidth,
-      window.innerHeight
-    );
+    useFullscreenAndResizing(canvasRef.value, width, height);
   }
 });
 </script>
