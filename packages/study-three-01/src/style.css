@@ -21,6 +21,8 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* 阻止滚动 */
+  overflow: hidden;
 }
 
 #app {
