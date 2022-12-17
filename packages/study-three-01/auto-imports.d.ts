@@ -161,6 +161,7 @@ declare global {
   const useFullscreenAndResizing: typeof import('./src/three/use-fullscreen-and-resizing')['default']
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
   const useGeolocation: typeof import('@vueuse/core')['useGeolocation']
+  const useGeometries: typeof import('./src/three/use-geometries')['default']
   const useIdle: typeof import('@vueuse/core')['useIdle']
   const useImage: typeof import('@vueuse/core')['useImage']
   const useInfiniteScroll: typeof import('@vueuse/core')['useInfiniteScroll']
