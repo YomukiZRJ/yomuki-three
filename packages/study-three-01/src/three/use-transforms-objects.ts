@@ -1,39 +1,39 @@
 /*
  * @Desc: 改变对象
  */
-import * as THREE from "three";
+import * as THREE from 'three'
 export default (canvasEl: HTMLCanvasElement, width: number, height: number) => {
   /**
    * 场景
    */
-  const scene = new THREE.Scene();
+  const scene = new THREE.Scene()
 
   /**
    * 组
    */
-  const group = new THREE.Group();
-  scene.add(group);
+  const group = new THREE.Group()
+  scene.add(group)
 
   const cube1 = new THREE.Mesh(
     new THREE.BoxGeometry(1, 1, 1),
-    new THREE.MeshBasicMaterial({ color: 0xff0000 })
-  );
-  group.add(cube1);
+    new THREE.MeshBasicMaterial({ color: 0xFF0000 })
+  )
+  group.add(cube1)
   const cube2 = new THREE.Mesh(
     new THREE.BoxGeometry(1, 1, 1),
-    new THREE.MeshBasicMaterial({ color: 0xfff000 })
-  );
-  cube2.position.x=2
-  group.add(cube2);
+    new THREE.MeshBasicMaterial({ color: 0xFFF000 })
+  )
+  cube2.position.x = 2
+  group.add(cube2)
   const cube3 = new THREE.Mesh(
     new THREE.BoxGeometry(1, 1, 1),
-    new THREE.MeshBasicMaterial({ color: 0x00ffff })
-  );
-  cube3.position.x=-2
-  group.add(cube3);
+    new THREE.MeshBasicMaterial({ color: 0x00FFFF })
+  )
+  cube3.position.x = -2
+  group.add(cube3)
 
-  group.scale.x=.8 // 整个组缩放
-  group.position.y=1
+  group.scale.x = 0.8 // 整个组缩放
+  group.position.y = 1
   // const geometry = new THREE.BoxGeometry(1, 1, 1);
   // const material = new THREE.MeshBasicMaterial({
   //   color: 0xff0000,
@@ -61,23 +61,23 @@ export default (canvasEl: HTMLCanvasElement, width: number, height: number) => {
   /**
    * 辅助坐标系
    */
-  const axesHelper = new THREE.AxesHelper(5);
-  scene.add(axesHelper);
+  const axesHelper = new THREE.AxesHelper(5)
+  scene.add(axesHelper)
 
   /**
    * 相机
    */
-  const camera = new THREE.PerspectiveCamera(75, width / height);
-  camera.position.set(1, 1, 5);
-  scene.add(camera);
+  const camera = new THREE.PerspectiveCamera(75, width / height)
+  camera.position.set(1, 1, 5)
+  scene.add(camera)
 
   // camera.lookAt(mesh.position) // 让相机看向某个位置
   /**
    * 渲染器
    */
   const renderer = new THREE.WebGLRenderer({
-    canvas: canvasEl,
-  });
-  renderer.setSize(width, height);
-  renderer.render(scene, camera);
-};
+    canvas: canvasEl
+  })
+  renderer.setSize(width, height)
+  renderer.render(scene, camera)
+}
