@@ -64,6 +64,7 @@ importers:
       '@vitejs/plugin-vue': ^4.0.0
       '@vueuse/core': ^9.7.0
       '@yomukizrj/eslint-config-vue3-ts': ^0.1.0
+      dat.gui: ^0.7.9
       eslint: ^8.28.0
       gsap: ^3.11.3
       three: ^0.146.0
@@ -76,6 +77,7 @@ importers:
     dependencies:
       '@types/three': 0.146.0
       '@vueuse/core': 9.7.0_vue@3.2.45
+      dat.gui: 0.7.9
       gsap: 3.11.3
       three: 0.146.0
       vue: 3.2.45
@@ -1843,6 +1845,10 @@ packages:
 
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
+
+  /dat.gui/0.7.9:
+    resolution: {integrity: sha512-sCNc1OHobc+Erc1HqiswYgHdVNpSJUlk/Hz8vzOCsER7rl+oF/4+v8GXFUyCgtXpoCX6+bnmg07DedLvBLwYKQ==}
+    dev: false
 
   /de-indent/1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}

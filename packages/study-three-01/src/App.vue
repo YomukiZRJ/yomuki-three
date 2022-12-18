@@ -3,7 +3,7 @@ const canvasRef = ref<HTMLCanvasElement | null>(null);
 const { width, height } = useWindowSize();
 onMounted(() => {
   if (canvasRef.value) {
-    useGeometries(canvasRef.value, width, height);
+    useDebugUi(canvasRef.value, width, height);
   }
 });
 </script>

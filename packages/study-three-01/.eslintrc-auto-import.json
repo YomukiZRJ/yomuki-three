@@ -132,6 +132,7 @@
     "useDebounce": true,
     "useDebounceFn": true,
     "useDebouncedRefHistory": true,
+    "useDebugUi": true,
     "useDeviceMotion": true,
     "useDeviceOrientation": true,
     "useDevicePixelRatio": true,
