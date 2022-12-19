@@ -223,6 +223,7 @@
     "useTextDirection": true,
     "useTextSelection": true,
     "useTextareaAutosize": true,
+    "useTextures": true,
     "useThrottle": true,
     "useThrottleFn": true,
     "useThrottledRefHistory": true,

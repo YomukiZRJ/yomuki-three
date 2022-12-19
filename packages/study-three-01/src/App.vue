@@ -2,7 +2,7 @@
 const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
 onMounted(() => {
-  if (canvasRef.value) useDebugUi(canvasRef.value, width, height)
+  if (canvasRef.value) useTextures(canvasRef.value, width, height)
 })
 </script>
 
