@@ -173,6 +173,7 @@
     "useLocalStorage": true,
     "useMagicKeys": true,
     "useManualRefHistory": true,
+    "useMaterial": true,
     "useMediaControls": true,
     "useMediaQuery": true,
     "useMemoize": true,
