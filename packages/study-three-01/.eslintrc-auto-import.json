@@ -95,6 +95,7 @@
     "unref": true,
     "unrefElement": true,
     "until": true,
+    "use3dText": true,
     "useActiveElement": true,
     "useAnimations": true,
     "useAnimationsGsap": true,

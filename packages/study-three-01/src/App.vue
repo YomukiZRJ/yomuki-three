@@ -1,8 +1,9 @@
 <script setup lang="ts">
+
 const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
 onMounted(() => {
-  if (canvasRef.value) useMaterial(canvasRef.value, width, height)
+  if (canvasRef.value) use3dText(canvasRef.value, width, height)
 })
 </script>
 

@@ -96,6 +96,7 @@ declare global {
   const unref: typeof import('vue')['unref']
   const unrefElement: typeof import('@vueuse/core')['unrefElement']
   const until: typeof import('@vueuse/core')['until']
+  const use3dText: typeof import('./src/three/use-3d-text')['default']
   const useActiveElement: typeof import('@vueuse/core')['useActiveElement']
   const useAnimations: typeof import('./src/three/use-animations')['default']
   const useAnimationsGsap: typeof import('./src/three/use-animations-gsap')['default']
