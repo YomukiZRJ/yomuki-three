@@ -171,6 +171,7 @@
     "useIntervalFn": true,
     "useKeyModifier": true,
     "useLastChanged": true,
+    "useLights": true,
     "useLocalStorage": true,
     "useMagicKeys": true,
     "useManualRefHistory": true,
