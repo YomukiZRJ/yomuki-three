@@ -67,6 +67,7 @@ importers:
       dat.gui: ^0.7.9
       eslint: ^8.28.0
       gsap: ^3.11.3
+      lil-gui: ^0.17.0
       three: ^0.146.0
       typescript: ^4.9.3
       unplugin-auto-import: ^0.12.1
@@ -79,6 +80,7 @@ importers:
       '@vueuse/core': 9.7.0_vue@3.2.45
       dat.gui: 0.7.9
       gsap: 3.11.3
+      lil-gui: 0.17.0
       three: 0.146.0
       vue: 3.2.45
     devDependencies:
@@ -3030,6 +3032,10 @@ packages:
       lightningcss-linux-x64-gnu: 1.16.1
       lightningcss-linux-x64-musl: 1.16.1
       lightningcss-win32-x64-msvc: 1.16.1
+
+  /lil-gui/0.17.0:
+    resolution: {integrity: sha512-MVBHmgY+uEbmJNApAaPbtvNh1RCAeMnKym82SBjtp5rODTYKWtM+MXHCifLe2H2Ti1HuBGBtK/5SyG4ShQ3pUQ==}
+    dev: false
 
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}

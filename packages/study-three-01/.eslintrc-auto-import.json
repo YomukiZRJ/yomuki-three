@@ -211,6 +211,7 @@
     "useScroll": true,
     "useScrollLock": true,
     "useSessionStorage": true,
+    "useShadows": true,
     "useShare": true,
     "useSlots": true,
     "useSorted": true,
