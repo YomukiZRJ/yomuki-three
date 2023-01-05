@@ -1,5 +1,5 @@
 /*
- * @Desc: 阴影
+ * @Desc: 鬼屋
  */
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'

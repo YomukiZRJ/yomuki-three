@@ -195,6 +195,7 @@
     "useOrbitControls": true,
     "usePageLeave": true,
     "useParallax": true,
+    "useParticles": true,
     "usePermission": true,
     "usePointer": true,
     "usePointerSwipe": true,

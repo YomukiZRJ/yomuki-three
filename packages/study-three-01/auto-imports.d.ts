@@ -196,6 +196,7 @@ declare global {
   const useOrbitControls: typeof import('./src/three/use-orbit-controls')['default']
   const usePageLeave: typeof import('@vueuse/core')['usePageLeave']
   const useParallax: typeof import('@vueuse/core')['useParallax']
+  const useParticles: typeof import('./src/three/use-particles')['default']
   const usePermission: typeof import('@vueuse/core')['usePermission']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']

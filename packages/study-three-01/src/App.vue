@@ -3,7 +3,7 @@
 const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
 onMounted(() => {
-  if (canvasRef.value) useHauntedHouse(canvasRef.value, width, height)
+  if (canvasRef.value) useParticles(canvasRef.value, width, height)
 })
 </script>
 

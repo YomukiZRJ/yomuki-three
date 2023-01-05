@@ -184,3 +184,28 @@ export const createSpotLightGui = (gui: GUI, light: THREE.SpotLight) => {
   folder.add(light, 'castShadow')
   createPerspectiveCameraGui(folder, light.shadow.camera)
 }
+
+export const createPointsMaterialGui = (gui: GUI, obj: THREE.PointsMaterial) => {
+  const folder = gui.addFolder('点材质')
+  const params = {
+    color: `#${obj.color.getHexString()}`
+  }
+  folder.close()
+  folder.addColor(params, 'color').onChange((val) => {
+    obj.color.set(val)
+  })
+  folder.add(obj, 'vertexColors').onChange(() => {
+    obj.needsUpdate = true
+  })
+  folder.add(obj, 'size').min(0)
+    .max(0.5)
+    .step(0.001)
+  folder.add(obj, 'sizeAttenuation').onChange(() => {
+    obj.needsUpdate = true
+  })
+  folder.add(obj, 'alphaTest').min(0)
+    .max(1)
+    .step(0.001)
+  folder.add(obj, 'depthTest')
+  folder.add(obj, 'depthWrite')
+}
