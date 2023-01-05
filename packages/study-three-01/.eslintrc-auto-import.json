@@ -163,6 +163,7 @@
     "useGamepad": true,
     "useGeolocation": true,
     "useGeometries": true,
+    "useHauntedHouse": true,
     "useIdle": true,
     "useImage": true,
     "useInfiniteScroll": true,

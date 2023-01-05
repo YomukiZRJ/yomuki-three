@@ -1,5 +1,34 @@
 import type { GUI } from 'lil-gui'
 import * as THREE from 'three'
+export const createObject3DGui = (gui: GUI, obj: THREE.Group, name = 'object3d') => {
+  const folder = gui.addFolder(name)
+  folder.close()
+  folder.add(obj, 'visible')
+  folder.add(obj.position, 'x').min(-5)
+    .max(5)
+    .step(0.001)
+  folder.add(obj.position, 'y').min(-5)
+    .max(5)
+    .step(0.001)
+  folder.add(obj.position, 'z').min(-5)
+    .max(5)
+    .step(0.001)
+  folder.add(obj.scale, 'x').min(0)
+    .max(5)
+    .step(0.001)
+  folder.add(obj.scale, 'y').min(0)
+    .max(5)
+    .step(0.001)
+  folder.add(obj.scale, 'z').min(0)
+    .max(5)
+    .step(0.001)
+}
+export const createFogGui = (gui: GUI, obj: THREE.Fog) => {
+  const folder = gui.addFolder('雾')
+  folder.close()
+  folder.add(obj, 'near')
+  folder.add(obj, 'far')
+}
 /**
  * 创建环境光调试面板
  * @param gui
