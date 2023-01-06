@@ -206,6 +206,7 @@
     "usePreferredLanguages": true,
     "usePreferredReducedMotion": true,
     "useRafFn": true,
+    "useRaycaster": true,
     "useRefHistory": true,
     "useResizeObserver": true,
     "useScreenOrientation": true,

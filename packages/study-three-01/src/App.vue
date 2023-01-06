@@ -3,7 +3,7 @@
 const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
 onMounted(() => {
-  if (canvasRef.value) useGalaxyGenerator(canvasRef.value, width, height)
+  if (canvasRef.value) useRaycaster(canvasRef.value, width, height)
 })
 </script>
 
