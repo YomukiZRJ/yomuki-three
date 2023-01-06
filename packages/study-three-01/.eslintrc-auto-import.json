@@ -160,6 +160,7 @@
     "useFps": true,
     "useFullscreen": true,
     "useFullscreenAndResizing": true,
+    "useGalaxy Generator": true,
     "useGamepad": true,
     "useGeolocation": true,
     "useGeometries": true,
