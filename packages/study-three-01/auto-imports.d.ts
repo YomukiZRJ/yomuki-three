@@ -161,7 +161,7 @@ declare global {
   const useFps: typeof import('@vueuse/core')['useFps']
   const useFullscreen: typeof import('@vueuse/core')['useFullscreen']
   const useFullscreenAndResizing: typeof import('./src/three/use-fullscreen-and-resizing')['default']
-  const useGalaxy Generator: typeof import('./src/three/use-galaxy -generator')['default']
+  const useGalaxyGenerator: typeof import('./src/three/use-galaxy-generator')['default']
   const useGamepad: typeof import('@vueuse/core')['useGamepad']
   const useGeolocation: typeof import('@vueuse/core')['useGeolocation']
   const useGeometries: typeof import('./src/three/use-geometries')['default']

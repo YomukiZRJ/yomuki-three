@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import useGalaxyGenerator from './three/use-galaxy -generator'
 
 const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
