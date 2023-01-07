@@ -214,6 +214,7 @@ declare global {
   const useScreenSafeArea: typeof import('@vueuse/core')['useScreenSafeArea']
   const useScriptTag: typeof import('@vueuse/core')['useScriptTag']
   const useScroll: typeof import('@vueuse/core')['useScroll']
+  const useScrollBasedAnimation: typeof import('./src/three/use-scroll-based-animation')['default']
   const useScrollLock: typeof import('@vueuse/core')['useScrollLock']
   const useSessionStorage: typeof import('@vueuse/core')['useSessionStorage']
   const useShadows: typeof import('./src/three/use-shadows')['default']

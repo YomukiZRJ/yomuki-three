@@ -2,20 +2,26 @@
 
 const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
+
 onMounted(() => {
-  if (canvasRef.value) useRaycaster(canvasRef.value, width, height)
+  if (canvasRef.value) useScrollBasedAnimation(canvasRef.value, width, height)
 })
+
 </script>
 
 <template>
-  <div class="study-three">
-    <canvas ref="canvasRef" />
-  </div>
+  <canvas
+    ref="canvasRef"
+    class="webgl"
+  />
+  <scroll-based-animation />
 </template>
 
 <style scoped>
-.study-three {
-  width: 100vw;
-  height: 100vh;
+.webgl{
+  position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
 }
 </style>
