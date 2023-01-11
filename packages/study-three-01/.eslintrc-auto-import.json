@@ -198,6 +198,7 @@
     "useParallax": true,
     "useParticles": true,
     "usePermission": true,
+    "usePhysics": true,
     "usePointer": true,
     "usePointerSwipe": true,
     "usePreferredColorScheme": true,

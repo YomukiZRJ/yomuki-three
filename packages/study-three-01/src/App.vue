@@ -4,7 +4,7 @@ const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
 
 onMounted(() => {
-  if (canvasRef.value) useScrollBasedAnimation(canvasRef.value, width, height)
+  if (canvasRef.value) usePhysics(canvasRef.value, width, height)
 })
 
 </script>
@@ -14,7 +14,7 @@ onMounted(() => {
     ref="canvasRef"
     class="webgl"
   />
-  <scroll-based-animation />
+  <!-- <scroll-based-animation /> -->
 </template>
 
 <style scoped>

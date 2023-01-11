@@ -199,6 +199,7 @@ declare global {
   const useParallax: typeof import('@vueuse/core')['useParallax']
   const useParticles: typeof import('./src/three/use-particles')['default']
   const usePermission: typeof import('@vueuse/core')['usePermission']
+  const usePhysics: typeof import('./src/three/use-physics')['default']
   const usePointer: typeof import('@vueuse/core')['usePointer']
   const usePointerSwipe: typeof import('@vueuse/core')['usePointerSwipe']
   const usePreferredColorScheme: typeof import('@vueuse/core')['usePreferredColorScheme']
