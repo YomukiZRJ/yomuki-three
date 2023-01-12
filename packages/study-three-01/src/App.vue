@@ -4,7 +4,7 @@ const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
 
 onMounted(() => {
-  if (canvasRef.value) usePhysics(canvasRef.value, width, height)
+  if (canvasRef.value) useModels(canvasRef.value, width, height)
 })
 
 </script>
