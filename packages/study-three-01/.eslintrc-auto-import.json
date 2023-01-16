@@ -209,6 +209,7 @@
     "usePreferredReducedMotion": true,
     "useRafFn": true,
     "useRaycaster": true,
+    "useRealisticRender": true,
     "useRefHistory": true,
     "useResizeObserver": true,
     "useScreenOrientation": true,

@@ -52,7 +52,7 @@ export const createDirectionalLightGui = (gui: GUI, light: THREE.DirectionalLigh
   folder.close()
   folder.add(light, 'visible')
   folder.add(light, 'intensity').min(0)
-    .max(1)
+    .max(20)
     .step(0.001)
   folder.add(light.position, 'x').min(-5)
     .max(5)

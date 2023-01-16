@@ -210,6 +210,7 @@ declare global {
   const usePreferredReducedMotion: typeof import('@vueuse/core')['usePreferredReducedMotion']
   const useRafFn: typeof import('@vueuse/core')['useRafFn']
   const useRaycaster: typeof import('./src/three/use-raycaster')['default']
+  const useRealisticRender: typeof import('./src/three/use-realistic-render')['default']
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
   const useResizeObserver: typeof import('@vueuse/core')['useResizeObserver']
   const useScreenOrientation: typeof import('@vueuse/core')['useScreenOrientation']
