@@ -30,7 +30,7 @@ export default defineConfig({
         //   ],
         // },
       ],
-      dirs: ['src/three'],
+      dirs: ['src/three', 'src/hooks'],
       eslintrc: {
         enabled: true // <-- this
       }

@@ -32,6 +32,9 @@
     "extends": [
       "@yomukizrj/eslint-config-vue3-ts",
       "./.eslintrc-auto-import.json"
-    ]
+    ],
+    "rules": {
+      "no-duplicate-imports": "off"
+    }
   }
 }
