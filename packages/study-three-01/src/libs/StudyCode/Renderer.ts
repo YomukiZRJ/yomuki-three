@@ -31,4 +31,8 @@ export default class Renderder{
   update () {
     this.instance.render(this.experience.scene, this.experience.camera.instance)
   }
+
+  destory () {
+    this.instance.dispose()
+  }
 }

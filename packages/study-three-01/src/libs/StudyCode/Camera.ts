@@ -4,8 +4,8 @@ import Experience from './Experience'
 
 export default class Camera{
   experience
-  instance: PerspectiveCamera | null
-  controls: OrbitControls | null
+  instance: PerspectiveCamera
+  controls: OrbitControls
   constructor () {
     this.experience = new Experience()
     this.#setInstance()
@@ -26,11 +26,18 @@ export default class Camera{
 
   resize () {
     this.instance.aspect = this.size.aspect
-    this.instance?.updateProjectionMatrix()
+    this.instance.updateProjectionMatrix()
   }
 
   update () {
-    this.controls?.update()
+    this.controls.update()
+  }
+
+  destory () {
+    /**
+     * 销毁轨道控制器
+     */
+    this.controls.dispose()
   }
 
   #setInstance () {

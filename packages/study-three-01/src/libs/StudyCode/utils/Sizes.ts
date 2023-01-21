@@ -5,16 +5,18 @@ export default class Sizes{
   widht: number
   height: number
   pixelRatio: number
-  constructor () {
+  handleResize = () => {
     this.#setSizes()
-    window.addEventListener('resize', () => {
-      this.#setSizes()
-      emit('resize')
-    })
+    emit('resize')
   }
 
-  removeListener () {
+  constructor () {
+    this.#setSizes()
+    window.addEventListener('resize', this.handleResize)
+  }
 
+  destory () {
+    window.removeEventListener('resize', this.handleResize)
   }
 
   #setSizes () {

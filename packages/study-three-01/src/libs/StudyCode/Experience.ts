@@ -5,7 +5,7 @@ import Renderer from './Renderer'
 import World from './World/World'
 import Resources from './utils/Resources'
 import { resizeKey, tickKey } from './utils/event-bus-key'
-import { Scene } from 'three'
+import { Mesh, Scene } from 'three'
 import source from './source'
 import Debug from './utils/Debug'
 const { on: onResize } = useEventBus(resizeKey)
@@ -45,14 +45,49 @@ export default class Experience{
     this.unsubscribeTick = onTick(() => {
       this.#update()
     })
+    window.test = this
   }
 
   /**
-   * 注销订阅事件
+   * 销毁
    */
-  unsubscribe () {
+  destory () {
+    /**
+     * 注销事件
+     */
     this.unsubscribeResize && this.unsubscribeResize()
     this.unsubscribeTick && this.unsubscribeTick()
+    /**
+     * 遍历场景
+     * @see https://threejs.org/docs/index.html#manual/zh/introduction/How-to-dispose-of-objects
+     * 销毁几何体，材质，纹理
+     */
+    this.scene.traverse((child) => {
+      if (child instanceof Mesh){
+        child.geometry.dispose()
+        for (const key in child.material){
+          /**
+           * 循环材质属性 如果存在dispose，则执行
+           */
+          const prop = child.material[key]
+          if (prop && (typeof prop.dispose) === 'function')
+            prop.dispose()
+        }
+        child.material.dispose()
+      }
+    })
+    /**
+     * 销毁相机类中的相关对象
+     */
+    this.camera.destory()
+    /**
+     * 销毁渲染器
+     */
+    this.renderder.destory()
+    /**
+     * 销毁debugui
+     */
+    this.debug?.destroy()
   }
 
   /**

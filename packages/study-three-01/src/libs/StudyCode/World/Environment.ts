@@ -1,3 +1,4 @@
+import type { GUI } from 'lil-gui'
 import type { BufferGeometry, CubeTexture } from 'three'
 import { DirectionalLight, Mesh, MeshStandardMaterial, sRGBEncoding } from 'three'
 import Experience from '../Experience'
@@ -12,10 +13,13 @@ export default class Environment{
       texture: null
     }
 
+  debugFolder: GUI
+  debugObject = {}
   constructor () {
     this.experience = new Experience()
     this.#setSunLight()
     this.#setEnvironmentMap()
+    this.#setDebug()
   }
 
   updateMaterials () {
@@ -56,11 +60,40 @@ export default class Environment{
     }
   }
 
+  #setDebug () {
+    if (!this.debug.gui) return
+    this.debugFolder = this.debug.gui.addFolder('environment')
+    this.debugFolder.add(this.environmentMap, 'intensity').name('环境地图强度')
+      .min(0)
+      .max(4)
+      .step(0.001)
+      .onChange(() => {
+        this.updateMaterials()
+      })
+    this.debugFolder.add(this.sunLight, 'intensity').name('太阳光强度')
+      .min(0)
+      .max(5)
+      .step(0.001)
+    this.debugFolder.add(this.sunLight.position, 'x').min(-5)
+      .max(5)
+      .step(0.01)
+    this.debugFolder.add(this.sunLight.position, 'y').min(0)
+      .max(10)
+      .step(0.01)
+    this.debugFolder.add(this.sunLight.position, 'z').min(-5)
+      .max(5)
+      .step(0.01)
+  }
+
   get scene () {
     return this.experience.scene
   }
 
   get resources () {
     return this.experience.resources
+  }
+
+  get debug () {
+    return this.experience.debug
   }
 }

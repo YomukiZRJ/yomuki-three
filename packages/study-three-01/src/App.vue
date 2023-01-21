@@ -1,26 +1,14 @@
 <script setup lang="ts">
-import { threeResizeKey } from './utils/event-bus-key'
-import type { threeResizeEvent } from './utils/event-bus-key'
-import Experience from './libs/StudyCode/Experience'
-
 const fps = useFps()
-const bus = useEventBus(threeResizeKey)
 const canvasRef = ref < HTMLCanvasElement | null >(null)
-useThree(canvasRef)
-const handleResize = (val: threeResizeEvent) => {
-  // console.log(val)
-}
-bus.on(handleResize)
-
 // const { width, height } = useWindowSize()
 
 // onMounted(() => {
 //   if (canvasRef.value) useCodeStructuringForBiggerProjects(canvasRef.value, width, height)
 // })
-let exp: null | Experience = null
 onMounted(() => {
   if (canvasRef.value)
-    exp = new Experience(canvasRef.value)
+    useCodeStructuringForBiggerProjects(canvasRef)
 })
 </script>
 
