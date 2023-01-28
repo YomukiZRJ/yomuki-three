@@ -221,6 +221,7 @@
     "useScrollBasedAnimation": true,
     "useScrollLock": true,
     "useSessionStorage": true,
+    "useShaders": true,
     "useShadows": true,
     "useShare": true,
     "useSlots": true,

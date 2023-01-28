@@ -18,6 +18,7 @@ importers:
       unplugin-auto-import: ^0.12.1
       unplugin-vue-components: ^0.22.12
       vite: ^4.0.0
+      vite-plugin-glsl: ^1.1.1
       vue: ^3.2.45
       vue-tsc: ^1.0.11
     dependencies:
@@ -37,6 +38,7 @@ importers:
       unplugin-auto-import: 0.12.1_@vueuse+core@9.7.0
       unplugin-vue-components: 0.22.12_vue@3.2.45
       vite: 4.0.1
+      vite-plugin-glsl: 1.1.1_vite@4.0.1
       vue-tsc: 1.0.13_typescript@4.9.3
 
 packages:
@@ -2773,6 +2775,18 @@ packages:
     dependencies:
       spdx-correct: 3.1.1
       spdx-expression-parse: 3.0.1
+    dev: true
+
+  /vite-plugin-glsl/1.1.1_vite@4.0.1:
+    resolution: {integrity: sha512-OLkjjpl2yByaMxqUrSKSoNkP8fxpZL2ZWgMc20lvhateBrffe0rbgCIDOGOsCna8GYBfKS9GBoOMxK6Umkrjzg==}
+    engines: {node: '>= 16.15.1', npm: '>= 8.11.0'}
+    peerDependencies:
+      vite: ^3.0.0 || ^4.0.0
+    dependencies:
+      '@rollup/pluginutils': 5.0.2
+      vite: 4.0.1
+    transitivePeerDependencies:
+      - rollup
     dev: true
 
   /vite/4.0.1:

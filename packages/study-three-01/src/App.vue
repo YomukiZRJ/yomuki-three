@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const fps = useFps()
 const canvasRef = ref < HTMLCanvasElement | null >(null)
-// const { width, height } = useWindowSize()
+const { width, height } = useWindowSize()
 
-// onMounted(() => {
-//   if (canvasRef.value) useCodeStructuringForBiggerProjects(canvasRef.value, width, height)
-// })
 onMounted(() => {
-  if (canvasRef.value)
-    useCodeStructuringForBiggerProjects(canvasRef)
+  if (canvasRef.value) useShaders(canvasRef.value, width, height)
 })
+// onMounted(() => {
+//   if (canvasRef.value)
+//     useCodeStructuringForBiggerProjects(canvasRef)
+// })
 </script>
 
 <template>
