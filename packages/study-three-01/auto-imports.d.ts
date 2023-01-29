@@ -222,6 +222,7 @@ declare global {
   const useScrollBasedAnimation: typeof import('./src/three/use-scroll-based-animation')['default']
   const useScrollLock: typeof import('@vueuse/core')['useScrollLock']
   const useSessionStorage: typeof import('@vueuse/core')['useSessionStorage']
+  const useShaderPatterns: typeof import('./src/three/use-shader-patterns')['default']
   const useShaders: typeof import('./src/three/use-shaders')['default']
   const useShadows: typeof import('./src/three/use-shadows')['default']
   const useShare: typeof import('@vueuse/core')['useShare']
