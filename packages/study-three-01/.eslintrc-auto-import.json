@@ -210,6 +210,7 @@
     "usePreferredLanguages": true,
     "usePreferredReducedMotion": true,
     "useRafFn": true,
+    "useRagingSea": true,
     "useRaycaster": true,
     "useRealisticRender": true,
     "useRefHistory": true,

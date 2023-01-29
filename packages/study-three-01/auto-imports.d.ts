@@ -211,6 +211,7 @@ declare global {
   const usePreferredLanguages: typeof import('@vueuse/core')['usePreferredLanguages']
   const usePreferredReducedMotion: typeof import('@vueuse/core')['usePreferredReducedMotion']
   const useRafFn: typeof import('@vueuse/core')['useRafFn']
+  const useRagingSea: typeof import('./src/three/use-raging-sea')['default']
   const useRaycaster: typeof import('./src/three/use-raycaster')['default']
   const useRealisticRender: typeof import('./src/three/use-realistic-render')['default']
   const useRefHistory: typeof import('@vueuse/core')['useRefHistory']
