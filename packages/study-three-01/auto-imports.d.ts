@@ -98,6 +98,7 @@ declare global {
   const until: typeof import('@vueuse/core')['until']
   const use3dText: typeof import('./src/three/use-3d-text')['default']
   const useActiveElement: typeof import('@vueuse/core')['useActiveElement']
+  const useAnimatedGalaxy: typeof import('./src/three/use-animated-galaxy')['default']
   const useAnimations: typeof import('./src/three/use-animations')['default']
   const useAnimationsGsap: typeof import('./src/three/use-animations-gsap')['default']
   const useArrayEvery: typeof import('@vueuse/core')['useArrayEvery']

@@ -97,6 +97,7 @@
     "until": true,
     "use3dText": true,
     "useActiveElement": true,
+    "useAnimatedGalaxy": true,
     "useAnimations": true,
     "useAnimationsGsap": true,
     "useArrayEvery": true,

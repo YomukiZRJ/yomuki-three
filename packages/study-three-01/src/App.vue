@@ -4,7 +4,7 @@ const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
 
 onMounted(() => {
-  if (canvasRef.value) useRagingSea(canvasRef.value, width, height)
+  if (canvasRef.value) useAnimatedGalaxy(canvasRef.value, width, height)
 })
 // onMounted(() => {
 //   if (canvasRef.value)
