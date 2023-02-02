@@ -186,6 +186,7 @@
     "useMemoize": true,
     "useMemory": true,
     "useModels": true,
+    "useModifiedMaterials": true,
     "useMounted": true,
     "useMouse": true,
     "useMouseInElement": true,
