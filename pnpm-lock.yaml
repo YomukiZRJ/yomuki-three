@@ -13,7 +13,7 @@ importers:
       eslint: ^8.28.0
       gsap: ^3.11.3
       lil-gui: ^0.17.0
-      three: ^0.146.0
+      three: ^0.149.0
       typescript: ^4.9.3
       unplugin-auto-import: ^0.12.1
       unplugin-vue-components: ^0.22.12
@@ -28,7 +28,7 @@ importers:
       dat.gui: 0.7.9
       gsap: 3.11.3
       lil-gui: 0.17.0
-      three: 0.146.0
+      three: 0.149.0
       vue: 3.2.45
     devDependencies:
       '@vitejs/plugin-vue': 4.0.0_vite@4.0.1+vue@3.2.45
@@ -2602,8 +2602,8 @@ packages:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
     dev: true
 
-  /three/0.146.0:
-    resolution: {integrity: sha512-1lvNfLezN6OJ9NaFAhfX4sm5e9YCzHtaRgZ1+B4C+Hv6TibRMsuBAM5/wVKzxjpYIlMymvgsHEFrrigEfXnb2A==}
+  /three/0.149.0:
+    resolution: {integrity: sha512-tohpUxPDht0qExRLDTM8sjRLc5d9STURNrdnK3w9A+V4pxaTBfKWWT/IqtiLfg23Vfc3Z+ImNfvRw1/0CtxrkQ==}
     dev: false
 
   /to-fast-properties/2.0.0:

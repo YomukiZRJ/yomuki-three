@@ -4,7 +4,7 @@ const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
 
 onMounted(() => {
-  if (canvasRef.value) useModifiedMaterials(canvasRef.value, width, height)
+  if (canvasRef.value) usePostProcessing(canvasRef.value, width, height)
 })
 // onMounted(() => {
 //   if (canvasRef.value)

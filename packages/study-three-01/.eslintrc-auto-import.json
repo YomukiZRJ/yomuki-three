@@ -206,6 +206,7 @@
     "usePhysics": true,
     "usePointer": true,
     "usePointerSwipe": true,
+    "usePostProcessing": true,
     "usePreferredColorScheme": true,
     "usePreferredContrast": true,
     "usePreferredDark": true,
