@@ -11,6 +11,7 @@ import { DotScreenPass } from 'three/examples/jsm/postprocessing/DotScreenPass'
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass'
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass'
 import { RGBShiftShader } from 'three/examples/jsm/shaders/RGBShiftShader'
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass'
 // 伽马矫正
 import { GammaCorrectionShader } from 'three/examples/jsm/shaders/GammaCorrectionShader'
 // 通道
@@ -120,15 +121,17 @@ export default (
   /**
    * effext composer
    */
+
   // render target
   // width 和height不重要，因为后面的setSize会更新它们
   const renderTarget = new THREE.WebGLRenderTarget(800, 600, {
     minFilter: THREE.LinearFilter,
     magFilter: THREE.LinearFilter,
-    format: THREE.RGBAFormat,
-    // encoding: THREE.sRGBEncoding,
-    samples: 1
+    format: THREE.RGBAFormat
   })
+
+  if (renderer.getPixelRatio() === 1 && renderer.capabilities.isWebGL2)
+    renderTarget.samples = 1
 
   // composer
   const effectComposer = new EffectComposer(renderer, renderTarget)
@@ -148,11 +151,116 @@ export default (
   effectComposer.addPass(glitchPass)
   // rgb shift pass (颜色位移)（一种赛博朋克的效果）
   const rgbShiftPass = new ShaderPass(RGBShiftShader)
-  rgbShiftPass.enabled = true
+  rgbShiftPass.enabled = false
   effectComposer.addPass(rgbShiftPass)
+  // UnrealBloomPass 会添加Bloom敷霜辉光效果到渲染中，它对重现光热、激光、光剑或放射性物质非常有用
+  const unrealBloomPass = new UnrealBloomPass()
+  effectComposer.addPass(unrealBloomPass)
+  unrealBloomPass.enabled = false
+  unrealBloomPass.strength = 0.3 // 光的强度
+  unrealBloomPass.radius = 1 // 亮度的发散半径
+  unrealBloomPass.threshold = 0.6 // 限制物体开始发光的亮度值
+  gui.add(unrealBloomPass, 'enabled')
+  gui.add(unrealBloomPass, 'strength').min(0)
+    .max(2)
+    .step(0.001)
+  gui.add(unrealBloomPass, 'radius').min(0)
+    .max(2)
+    .step(0.001)
+  gui.add(unrealBloomPass, 'threshold').min(0)
+    .max(1)
+    .step(0.001)
+
+  // 自定义着色通道
+  const TintShader = {
+    uniforms: {
+      tDiffuse: {
+        value: null
+      },
+      uTint: {
+        value: null
+      }
+    },
+    vertexShader: `
+      varying vec2 vUv;
+      void main(){
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+        vUv = uv;
+      }
+    `,
+    fragmentShader: `
+      uniform sampler2D tDiffuse;
+      varying vec2 vUv;
+      uniform vec3 uTint;
+      void main(){
+        vec4 color = texture2D(tDiffuse, vUv);
+        color.rgb += uTint;
+        gl_FragColor = color;
+      }
+    `
+  }
+  const tintPass = new ShaderPass(TintShader)
+  // 注意，我们将该值设为null。
+  // 不要直接在着色器对象中设置值，必须在创建完通道后，再去材质中修改值，因为着色器会被多次使用，即便没使用到也一样。
+  tintPass.material.uniforms.uTint.value = new THREE.Vector3()
+  effectComposer.addPass(tintPass)
+  gui.add(tintPass.material.uniforms.uTint.value, 'x').min(-1)
+    .max(1)
+    .step(0.001)
+    .name('red')
+  gui.add(tintPass.material.uniforms.uTint.value, 'y').min(-1)
+    .max(1)
+    .step(0.001)
+    .name('green')
+  gui.add(tintPass.material.uniforms.uTint.value, 'z').min(-1)
+    .max(1)
+    .step(0.001)
+    .name('blue')
+
+  // 自定义位移通道 ， 利用uv来产生位移效果
+  const DisplacementShader = {
+    uniforms: {
+      tDiffuse: {
+        value: null
+      },
+      uNormalMap: {
+        value: null
+      }
+    },
+    vertexShader: `
+    varying vec2 vUv;
+    void main(){
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+      vUv = uv;
+    }
+  `,
+    fragmentShader: `
+    uniform sampler2D tDiffuse;
+    uniform sampler2D uNormalMap;
+    varying vec2 vUv;
+    void main(){
+      vec3 normalColor = texture2D(uNormalMap,vUv).xyz * 2.0 - 1.0; 
+      vec2 newUv = vUv + normalColor.xy * 0.1;
+      vec4 color = texture2D(tDiffuse, newUv);
+
+      vec3 lightDirection = normalize(vec3(- 1.0, 1.0, 0.0));
+      float lightness = clamp(dot(normalColor, lightDirection), 0.0, 1.0);
+      color.rgb += lightness * 2.0;
+      
+      gl_FragColor = color;
+    }
+  `
+  }
+  const displacementPass = new ShaderPass(DisplacementShader)
+  displacementPass.material.uniforms.uNormalMap.value = textureLoader.load('../assets/textures/interfaceNormalMap.png')
+  effectComposer.addPass(displacementPass)
+
   // 使用通道来完成抗齿距
-  // const smaaPass = new SMAAPass()
-  // effectComposer.addPass(smaaPass)
+  if (renderer.getPixelRatio() === 1 && !renderer.capabilities.isWebGL2){
+    const smaaPass = new SMAAPass()
+    effectComposer.addPass(smaaPass)
+  }
+
   // 使用gamma矫正
   const gammaCorrectionPass = new ShaderPass(GammaCorrectionShader)
   effectComposer.addPass(gammaCorrectionPass)
@@ -167,6 +275,7 @@ export default (
   const tick = () => {
     const elapsedTime = clock.getElapsedTime()
     controls.update()
+
     // renderer.render(scene, camera)
     effectComposer.render()
     window.requestAnimationFrame(tick)
