@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    MixingHtmlAndWebgl: typeof import('./src/components/mixing-html-and-webgl.vue')['default']
     ScrollBasedAnimation: typeof import('./src/components/scroll-based-animation.vue')['default']
   }
 }

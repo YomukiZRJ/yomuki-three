@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const fps = useFps()
+// const fps = useFps()
 const canvasRef = ref < HTMLCanvasElement | null >(null)
 const { width, height } = useWindowSize()
-
+useStats()
 onMounted(() => {
-  if (canvasRef.value) usePostProcessing(canvasRef.value, width, height)
+  if (canvasRef.value) useMixingHtmlAndWebgl(canvasRef.value, width, height)
 })
 // onMounted(() => {
 //   if (canvasRef.value)
@@ -17,9 +17,10 @@ onMounted(() => {
     ref="canvasRef"
     class="webgl"
   />
-  <div class="fps">
+  <mixing-html-and-webgl />
+  <!-- <div class="fps">
     {{ fps }}
-  </div>
+  </div> -->
   <!-- <scroll-based-animation /> -->
 </template>
 

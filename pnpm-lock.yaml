@@ -13,6 +13,7 @@ importers:
       eslint: ^8.28.0
       gsap: ^3.11.3
       lil-gui: ^0.17.0
+      stats.js: ^0.17.0
       three: ^0.149.0
       typescript: ^4.9.3
       unplugin-auto-import: ^0.12.1
@@ -28,6 +29,7 @@ importers:
       dat.gui: 0.7.9
       gsap: 3.11.3
       lil-gui: 0.17.0
+      stats.js: 0.17.0
       three: 0.149.0
       vue: 3.2.45
     devDependencies:
@@ -2532,6 +2534,10 @@ packages:
   /spdx-license-ids/3.0.12:
     resolution: {integrity: sha512-rr+VVSXtRhO4OHbXUiAF7xW3Bo9DuuF6C5jH+q/x15j2jniycgKbxU09Hr0WqlSLUs4i4ltHGXqTe7VHclYWyA==}
     dev: true
+
+  /stats.js/0.17.0:
+    resolution: {integrity: sha512-hNKz8phvYLPEcRkeG1rsGmV5ChMjKDAWU7/OJJdDErPBNChQXxCo3WZurGpnWc6gZhAzEPFad1aVgyOANH1sMw==}
+    dev: false
 
   /string.prototype.trimend/1.0.6:
     resolution: {integrity: sha512-JySq+4mrPf9EsDBEDYMOb/lM7XQLulwg5R/m1r0PXEFqrV0qHvl58sdTilSXtKOflCsK2E8jxf+GKC0T07RWwQ==}
